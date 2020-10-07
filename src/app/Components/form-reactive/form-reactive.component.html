@@ -1,0 +1,41 @@
+<div class="container-fluid mt-4">
+
+	<form class="ml-5 mr-5"  (submit)="submit()" [formGroup]="reguistros">
+		<h4 class="text-primarys text-center mb-3">formulario reactivo</h4>
+		<div class="form-group">
+			<input type="text" placeholder="inserte su nombre" class="form-control" formControlName="nombre" required="required">
+			<div *ngIf="nombreInvalidate.invalid && nombreInvalidate.errors.required" class="alert alert-danger">
+				El campo Nombre es requerido
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="password" placeholder="inserte su clave" class="form-control" formControlName="clave" required="required" minlength="4">
+			<div *ngIf="claveInvalidate.invalid && claveInvalidate.errors.required" class="alert alert-danger">Ingrese la clave con minimo 4 caracteres
+			</div>
+		</div>
+		<div class="form-group">
+			<select class="form-control" formControlName="producto" required="required">
+				<option value="">Escoja su producto...</option>
+				<option value="arroz">arroz</option>
+				<option value="lentejas">lentejas</option>
+				<option value="frijoles">frijoles</option>
+			</select>
+			<div *ngIf="productoInvalidate.invalid && productoInvalidate.errors.required" class="alert alert-danger">
+				<div>
+					seleccione el producto por favor
+				</div>
+			</div>
+		</div>
+		<div class="form-group form-check">
+			<label class="form-check-label mr-5">Deseas recibir promociones ?</label>
+			<input type="checkbox" class="form-check-input" formControlName="suscripcion">
+		</div>
+		<div class="form-group form-check">
+			<button class="btn btn-info btn-block" [disabled]="reguistros.invalid" >Enviar</button>
+		</div>
+	</form>
+
+	
+	<app-dato *ngFor="let item of persona" [dato]=item></app-dato>
+	
+</div>
