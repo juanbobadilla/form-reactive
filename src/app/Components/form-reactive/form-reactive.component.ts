@@ -25,7 +25,7 @@ export class FormReactiveComponent implements OnInit {
 
   //validaciones para formularios reactivos
   reguistros = this.formBuilder.group({
-    nombre: ['',Validators.required],
+    nombre: ['', Validators.required],
     clave: ['', Validators.required],
     producto: ['', Validators.required],
     suscripcion: [true]
@@ -41,10 +41,10 @@ export class FormReactiveComponent implements OnInit {
     return this.reguistros.get('producto');
   }
 
-  
+
 
   //metodos
-  
+
   submit() {
     if (!this.reguistros.valid) {
       alert("ingrese todos los datos");
@@ -58,12 +58,9 @@ export class FormReactiveComponent implements OnInit {
         this.persona.length
       ))
       alert("datos ingresado correctamente");
-      this.reguistros.setValue({
-        nombre: [''],
-        clave: [''],
-        producto: [''],
-        suscripcion: [true]
-      });
+        this.nombreInvalidate.reset();
+        this.claveInvalidate.reset();
+        this.productoInvalidate.reset();
     }
 
   }

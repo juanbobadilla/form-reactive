@@ -1,10 +1,12 @@
-<div class="card text-white bg-success mb-3 mx-auto" style="max-width: 50rem;">
-  <button type="button" class="close bg-dark" aria-label="Close" (click)="delete(dato.id)">
-   x
+<div class="card text-white bg-primary mb-3 mx-auto" style="max-width: 50rem;">
+  <button type="button" class="close" aria-label="Close" (click)="delete(dato.id)">
+   <div class="bg-white mb-4">Borrar</div>
   </button>
-    <div class="card-header">{{dato.nombre}}</div>
+    <div class="card-header text-white">Nombre: {{dato.nombre}}</div>
     <div class="card-body">
-      <h5 class="card-title"> {{dato.clave}}</h5>
-      <p class="card-text">{{dato.producto}} - {{dato.promocion}}</p>
+      <h5>Nombre: {{dato.nombre}}</h5>
+      <h5 class="card-title"> Password: {{dato.clave}}</h5>
+        <p class="card-text">Producto escogido: {{dato.producto}} - Mostrar Promoción: {{dato.promocion}}</p>
     </div>
   </div>
+  
